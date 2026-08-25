@@ -139,7 +139,22 @@ body {
   right: 15px;
   bottom: 15px;
   height: 35px;
+  width: 35px;
   border: none;
+  color: #fff;
   background: var(--color-gradient);
+  font-size: 0.75rem;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
+
+.prompt-container .prompt-btn:hover{
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
