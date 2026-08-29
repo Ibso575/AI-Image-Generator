@@ -228,6 +228,10 @@ body {
 }
 
 .gallery-grid .img-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   aspect-ratio: 1;
@@ -246,6 +250,17 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.gallery-grid .img-card.loading :is(.result-img,.img-overlay) {
+  display: none;
+}
+.gallery-grid .img-card .status-container {
+  padding: 15px;
+  display: flex;
+  gap: 13px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gallery-grid .img-card .img-overlay {
@@ -276,6 +291,32 @@ body {
   border: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
 }
 
+.gallery-grid .img-card  .img-download-btn :hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-grid .img-card.loading .spinner {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform:  rotate(360deg);
+  }
+}
+
+.gallery-grid .img-card .status-text {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-placeholder);
+}
 
